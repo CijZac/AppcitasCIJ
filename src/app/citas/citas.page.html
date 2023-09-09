@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="">
+    <ion-title class="page-title">Citas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="" style="color: #ad3700;"></ion-back-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-datetime></ion-datetime>
+  <ion-card *ngFor="let Cita of Citas" (click)="openCita(Cita)" class="cita-card">
+    <ion-card-header class="cita-header">
+      <ion-card-title>{{ Cita.nombre_evento }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>
+          <p><ion-icon name="time-outline"></ion-icon> 
+            {{Cita.fecha}} {{Cita.hora}}</p>
+          <h2>Paciente: {{ Cita.nombre_paciente }}</h2>
+          <h2>DR. {{ Cita.nombre_doctor }}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addCita()" color="none" style="background-color: transparent; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);">
+      <ion-icon name="add" style="color: #ad3700; font-size: 1.5rem;"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  
+
+<style>
+  .page-title {
+    color: #ad3700; /* Color naranja para el título */
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .cita-card {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #FFF3E0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .cita-header {
+    background-color: #ad3700;
+  }
+
+  .cita-header ion-card-title {
+    color: white;
+  }
+</style>

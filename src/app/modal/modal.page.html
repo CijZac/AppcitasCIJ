@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="">
+    <ion-title>Detalles De La Cita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="Cita">
+    <ion-item>
+      <ion-label position="stacked">Nombre del Evento</ion-label>
+      <ion-input [(ngModel)]="Cita.nombre_evento"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime
+      [isDateEnabled]="isWeekday"
+      presentation="date"
+        [(ngModel)]="Cita.fecha"
+        
+      ></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+    
+      <ion-datetime
+      presentation="time"
+        [(ngModel)]="Cita.hora"
+      ></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Nombre de paciente</ion-label>
+      <ion-input [(ngModel)]="Cita.nombre_paciente"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Nombre de doctor</ion-label>  
+      <ion-input [(ngModel)]="Cita.nombre_doctor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Correo Electronico</ion-label>
+      <ion-input [(ngModel)]="Cita.correo_electronico"></ion-input>
+    </ion-item>
+   
+  </div>
+
+  <ion-button expand="block" color="success" (click)="updateNote()">
+    <ion-icon name="save" slot="start"></ion-icon>
+    Actualizar
+  </ion-button>
+  <ion-button expand="block" color="danger" (click)="deleteNote()">
+    <ion-icon name="trash" slot="start"></ion-icon>
+    Eliminar
+  </ion-button>
+
+</ion-content>

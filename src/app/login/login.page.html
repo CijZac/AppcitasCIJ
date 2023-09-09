@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="centered-title">Citas CIJ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <ion-img src="assets/cij.jpg"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-margin-top">
+        <form (ngSubmit)="login()" [formGroup]="credentials">
+          <ion-item>
+            <ion-input type="email" placeholder="Correo Electrónico" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-button type="submit" expand="full" class="ion-margin-top">Iniciar Sesión</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cijcitas"
+  },
+  "targets": {
+    "cijcitas": {
+      "hosting": {
+        "app": [
+          "cijcitas"
+        ]
+      }
+    }
+  }
+}
